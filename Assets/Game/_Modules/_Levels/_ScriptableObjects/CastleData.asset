@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548b79ea59866184bb22ff98c769b808, type: 3}
+  m_Name: CastleData
+  m_EditorClassIdentifier: 
+  levelName: Castle
+  levelSprite: {fileID: 21300000, guid: a5184e84e8ca0b6409764b1fa75eb6f3, type: 3}
+  deckSize: 36
+  playerHandSize: 3
+  defencesModifier: 0.25
+  totalCitizens: 30
+  citizensResponseOdds: 0.45

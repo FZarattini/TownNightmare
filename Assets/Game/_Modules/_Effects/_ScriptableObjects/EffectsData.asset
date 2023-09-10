@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2bd247261193740be8d0acc7d9c16c, type: 3}
+  m_Name: EffectsData
+  m_EditorClassIdentifier: 
+  hungerCasualtiesPerRound: 1
+  thirstCasualtiesPerRound: 3
+  sicknessCasualtiesPerRound: 2
+  hungerEndedMessage: The citizens are no longer starving!
+  thirstEndedMessage: The citizens are no longer parched!
+  sicknessEndedMessage: The citizens are no longer ill!
+  hungerRecoveryMessage: The citizens learned how to hunt. They are no longer starving!
+  thirstRecoveryMessage: The citizens dug another well. They are no longer parched!
+  sicknessRecoveryMessage: A new cure was found. The citizens are no longer sick!
+  hungerMaxRounds: 5
+  thirstMaxRounds: 3
+  sicknessMaxRounds: 6
+  effectRecoveryChance: 0.2

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca515a3ffbbfd64cbf43149bfd89790, type: 3}
+  m_Name: PoisonedWell
+  m_EditorClassIdentifier: 
+  cardSprite: {fileID: 21300000, guid: 046939d1227c8e140a2ba840f3d7644d, type: 3}
+  cardName: Poisoned Well
+  cardDescription: You sneak in late at night and poison the citizen's well!
+  cardType: 4
+  positiveOutcomeProbability: 0.2
+  positiveOutcomeDescription: The citizens fall ill and cannot drink from the well
+    anymore.
+  negativeOutcomeDescription: In the dark you mistake the latrine for the well. Nothing
+    befalls the citizens..
+  cardEffects: 0100000002000000
+  MaxCitizenCasualty: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca515a3ffbbfd64cbf43149bfd89790, type: 3}
+  m_Name: ZombieAttack
+  m_EditorClassIdentifier: 
+  cardSprite: {fileID: 21300000, guid: 5af3ced902ee7a0479555accc2b4f838, type: 3}
+  cardName: Zombie Attack
+  cardDescription: You use necromancy to bring back the dead!
+  cardType: 1
+  positiveOutcomeProbability: 0.4
+  positiveOutcomeDescription: The citizens are desperate looking for places to hide.
+  negativeOutcomeDescription: The citizens fight with all they have. All those zombie
+    tv shows were worth something..
+  cardEffects: 
+  MaxCitizenCasualty: 4
