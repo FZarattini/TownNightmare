@@ -12677,10 +12677,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1219259488678880648, guid: 75773a3e388815a4ca98ca8a2aaa0605, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.93
-      objectReference: {fileID: 0}
     - target: {fileID: 1287857853426109163, guid: 75773a3e388815a4ca98ca8a2aaa0605, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12733,10 +12729,6 @@ PrefabInstance:
       propertyPath: _loseScreen
       value: 
       objectReference: {fileID: 8697055163172265789}
-    - target: {fileID: 4190757322994019260, guid: 75773a3e388815a4ca98ca8a2aaa0605, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.9299994
-      objectReference: {fileID: 0}
     - target: {fileID: 5904153735724741463, guid: 75773a3e388815a4ca98ca8a2aaa0605, type: 3}
       propertyPath: _citizensResponse.Array.size
       value: 3
@@ -12791,10 +12783,6 @@ PrefabInstance:
       propertyPath: _citizensResponse.Array.data[2]._responseMessage
       value: The citizens set up spikes on the ground. Land attacks will be harder
         to succeed!
-      objectReference: {fileID: 0}
-    - target: {fileID: 7288566213978392137, guid: 75773a3e388815a4ca98ca8a2aaa0605, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.9299994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
