@@ -15,6 +15,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] List<Transform> _cardAnchors;
     [SerializeField] Transform playCardAnchor;
     [SerializeField] TextMeshPro _deckCount;
+    [SerializeField] WinScreen _winScreen;
+    [SerializeField] LoseScreen _loseScreen;
 
     [Title("Player Hand")]
     [SerializeField, ReadOnly] List<CardBehaviour> _playerDeck;
@@ -90,13 +92,15 @@ public class LevelController : MonoBehaviour
     {
         if (_remainingCitizens <= 0)
         {
-            // Player wins
+            _winScreen.SetupScreen(_playerDeck.Count);
+            _winScreen.gameObject.SetActive(true);
+            GameManager.Instance.SaveScore(_levelData.levelName);
             return;
         }
 
-        if(_playerDeck.Count <= 0)
+        if(_playerDeck.Count < _levelData.playerHandSize)
         {
-            // Player Loses
+            _loseScreen.gameObject.SetActive(true);
             return;
         }
 
@@ -174,7 +178,11 @@ public class LevelController : MonoBehaviour
             selectedCard.transform.position = _cardAnchors[i].transform.position;
 
             _playerHand.Add(selectedCard);
-            _playerDeck.RemoveAt(i);
+        }
+
+        foreach(CardBehaviour c in _playerHand)
+        {
+            _playerDeck.Remove(c);
         }
 
         UpdateDeckCount();

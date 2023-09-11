@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int playerScore;
     [SerializeField] bool onDialogue;
 
+    public int PlayerScore => playerScore;
+
     public static Action<int> OnPlayerScoreChanged = null;
 
     public bool OnDialogue
@@ -21,11 +23,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         LevelController.OnLevelStart += ResetScore;
+        WinScreen.OnCalculateFinalScore += SetFinalScore;
     }
 
     private void OnDisable()
     {
         LevelController.OnLevelStart -= ResetScore;
+        WinScreen.OnCalculateFinalScore -= SetFinalScore;
     }
 
     private void Awake()
@@ -54,6 +58,11 @@ public class GameManager : MonoBehaviour
         playerScore = 0;
 
         OnPlayerScoreChanged?.Invoke(playerScore);
+    }
+
+    void SetFinalScore(int value)
+    {
+        playerScore = value;
     }
 
     public void SaveScore(string key)
