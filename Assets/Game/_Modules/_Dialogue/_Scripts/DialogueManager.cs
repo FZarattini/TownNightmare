@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField, ReadOnly] List<string> dialogueQueue;
 
     [Title("Control")]
-    [SerializeField, HideInInspector] int dialogueIndex = 0;
     [SerializeField, Sirenix.OdinInspector.ReadOnly] bool writingLine;
     [SerializeField] float writeSpeed;
 
