@@ -31,6 +31,6 @@ public class StageSelection : MonoBehaviour
     void SetStageHighscore()
     {
         var stageScore = PlayerPrefs.GetInt(_levelData.levelName, 0);
-        _stageHighScore.text = $"Score: {stageScore}";
+        _stageHighScore.text = $"Best Score: {stageScore}";
     }
 }

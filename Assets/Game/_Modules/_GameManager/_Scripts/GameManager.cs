@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         OnPlayerScoreChanged?.Invoke(playerScore);
     }
 
+    // Resets the score to zero at the beginning of the level
     void ResetScore()
     {
         playerScore = 0;
@@ -60,11 +61,13 @@ public class GameManager : MonoBehaviour
         OnPlayerScoreChanged?.Invoke(playerScore);
     }
 
+    // Sets the final score based on the level results
     void SetFinalScore(int value)
     {
         playerScore = value;
     }
 
+    // Saves the player final score
     public void SaveScore(string key)
     {
         if(PlayerPrefs.GetInt(key, 0) < playerScore)

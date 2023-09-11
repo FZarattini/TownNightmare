@@ -16,7 +16,6 @@ public class CardBehaviour : MonoBehaviour
     [SerializeField, ReadOnly] LevelController _levelController;
 
     [Title("Object References")]
-    [SerializeField] SpriteRenderer _cardIcon;
     [SerializeField] TextMeshPro _cardName;
     [SerializeField] TextMeshPro _cardEffects;
     [SerializeField] TextMeshPro _cardMaxCasualties;
@@ -43,6 +42,7 @@ public class CardBehaviour : MonoBehaviour
         Setup();
     }
 
+    // Setup the visual data on the cards based on the _cardData scriptable object
     [Button]
     void Setup()
     {
@@ -62,6 +62,7 @@ public class CardBehaviour : MonoBehaviour
         _cardOdds.text = $"{(int)(_cardData.positiveOutcomeProbability * 100)}%";
     }
 
+    // Executes the behaviour of the card depending on the round phase
     public void ExecuteBehaviour()
     {
         if (cardInPlay) return;
@@ -86,11 +87,13 @@ public class CardBehaviour : MonoBehaviour
 
     }
 
+    // Send the card discard event
     void DiscardCard()
     {
         OnCardDiscarded?.Invoke(this);
     }
 
+    // Plays the card
     void PlayCard()
     {
         cardInPlay = true;

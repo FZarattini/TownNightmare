@@ -806,7 +806,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.2, y: 3.2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4064843723571192929}
@@ -826,7 +826,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardData: {fileID: 0}
   _levelController: {fileID: 0}
-  _cardIcon: {fileID: 1148360403302560361}
   _cardName: {fileID: 911578463900332861}
   _cardEffects: {fileID: 5909009665961292971}
   _cardMaxCasualties: {fileID: 4685500853596552826}

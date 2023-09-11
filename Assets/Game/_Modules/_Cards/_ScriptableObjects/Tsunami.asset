@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca515a3ffbbfd64cbf43149bfd89790, type: 3}
+  m_Name: Tsunami
+  m_EditorClassIdentifier: 
+  cardName: Tsunami
+  cardDescription: You make a deal with a local sea God. He agrees to send a giant
+    wave upon the citizens!
+  cardType: 2
+  positiveOutcomeProbability: 0.25
+  positiveOutcomeDescription: The citizens run for their lives!
+  negativeOutcomeDescription: The citizens manage to run up a nearby hill and get
+    to safety..
+  cardEffects: 
+  MaxCitizenCasualty: 8

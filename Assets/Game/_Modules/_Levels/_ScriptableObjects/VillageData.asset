@@ -17,5 +17,5 @@ MonoBehaviour:
   deckSize: 21
   playerHandSize: 3
   defencesModifier: 0.1
-  totalCitizens: 20
+  totalCitizens: 15
   citizensResponseOdds: 0.3

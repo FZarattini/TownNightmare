@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using TMPro;
 using System;
+using Unity.PlasticSCM.Editor.WebApi;
 
 public class LevelController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class LevelController : MonoBehaviour
     [Title("Defences Data")]
     [SerializeField, ReadOnly] int landDefences = 0;
     [SerializeField, ReadOnly] int airDefences = 0;
-    [SerializeField, ReadOnly] int magicDefence = 0;
+    [SerializeField, ReadOnly] int magicDefences = 0;
     [SerializeField] float modifierByDefence;
 
     [Title("Recovery Data")]
@@ -43,6 +44,25 @@ public class LevelController : MonoBehaviour
     [SerializeField, ReadOnly] RoundPhases _currentRoundPhase;
     [SerializeField, ReadOnly] int _remainingCitizens;
     [SerializeField, ReadOnly] int roundsPlayed = 0;
+
+
+    public int LandDefences
+    {
+        get => LandDefences;
+        set => LandDefences = value;
+    }
+
+    public int AirDefences
+    {
+        get => airDefences;
+        set => airDefences = value;
+    }
+
+    public int MagicDefences
+    {
+        get => magicDefences;
+        set => magicDefences = value;
+    }
 
     public static Action<RoundPhases> OnRoundPhaseChanged = null;
     public static Action<int> OnCitizensQuantityChanged = null;
@@ -114,15 +134,16 @@ public class LevelController : MonoBehaviour
         _deckCount.text = _playerDeck.Count.ToString();
     }
 
+    // Card discarded callback
     void OnCardDiscarded(CardBehaviour card)
     {
-
         _playerHand.Remove(card);
         Destroy(card.gameObject);
 
         ChangeRoundPhase(RoundPhases.PlayCard);
     }
 
+    // Card played callback
     void OnCardPlayed(CardBehaviour card)
     {
         for (int i = 0; i < _playerHand.Count; i++)
@@ -140,6 +161,7 @@ public class LevelController : MonoBehaviour
         CheckOngoingEffects();
     }
 
+    // Check if citizens will respond to the card played
     void TryCitizensResponse(CardBehaviour card)
     {
         var result = UnityEngine.Random.Range(0, 1f);
@@ -150,6 +172,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    // Returns the leftover card to the deck
     void ReturnToDeck(CardBehaviour card)
     {
         _playerDeck.Add(card);
@@ -158,6 +181,7 @@ public class LevelController : MonoBehaviour
         UpdateDeckCount();
     }
 
+    // Assigns the first cards of the deck to the player hand
     void GetPlayerHand()
     {
         if (_playerHand.Count > 0)
@@ -188,6 +212,7 @@ public class LevelController : MonoBehaviour
         UpdateDeckCount();
     }
 
+    // Check if the citizens have any defence in play to make the card harder to succeed
     public float CheckDefences(CardType cardType)
     {
         // There are no defences for Natural Disasters and Resource types
@@ -200,13 +225,14 @@ public class LevelController : MonoBehaviour
                 return landDefences * modifierByDefence;
 
             case CardType.Magic:
-                return magicDefence * modifierByDefence;
+                return magicDefences * modifierByDefence;
 
             default:
                 return 0;
         }
     }
 
+    // Applies the cards effects
     public void EnableEffect(List<CardEffects> effects)
     {
         foreach (CardEffects effect in effects)
@@ -261,6 +287,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    // Checks if any citizens need to die because of a card's effect, if the citizens are successfull in recovering from it and if the effect should end naturally
     void CheckOngoingEffects()
     {
         if (isHunger)
@@ -345,6 +372,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    // Checks if citizens are successfull in recovering from effect
     bool RollEffectRecovery()
     {
         var result = UnityEngine.Random.Range(0, 1f);
@@ -354,6 +382,7 @@ public class LevelController : MonoBehaviour
         return false;
     }
 
+    // Kills a random amount of citizens in (1, maxPossibility)
     public void KillCitizens(int maxPossibility)
     {
         var citizensQuantity = UnityEngine.Random.Range(1, maxPossibility + 1);
@@ -374,38 +403,11 @@ public class LevelController : MonoBehaviour
 
     }
 
+    // Changes the round phase (discard or play a card)
     void ChangeRoundPhase(RoundPhases roundPhase)
     {
         _currentRoundPhase = roundPhase;
         OnRoundPhaseChanged?.Invoke(roundPhase);
-    }
-
-    protected void RunResponse(CitizensResponse response)
-    {
-        GameObject responseObject = response.ResponseObject;
-        bool activateObject = response.ActivateObject;
-        string responseMessage = response.ResponseMessage;
-
-        if (responseObject != null)
-            responseObject.SetActive(activateObject);
-
-        switch (response.ResponseType)
-        {
-            case CardType.Land:
-                landDefences++;
-                break;
-            case CardType.Air:
-                airDefences++;
-                break;
-            case CardType.Magic:
-                magicDefence++;
-                break;
-
-            default:
-                break;
-        }
-
-        DialogueManager.Instance.AddDialogueToQueue(responseMessage);
     }
 
     protected virtual void LevelChanges() { }

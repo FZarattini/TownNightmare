@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardPrefabs:
   - {fileID: 5241920257920317440, guid: fe02622579ba3224eb07d71b81f43049, type: 3}
+  - {fileID: 8873440325894640349, guid: f56e893755163494f9254ec781c99bf7, type: 3}
   - {fileID: 3422155849633590762, guid: 06f692af743177443b25b831c8510dc7, type: 3}
   - {fileID: 8637700185430614217, guid: e70a10cc7ed68f94886a1ef9965d77f9, type: 3}
+  - {fileID: 3854345258088943087, guid: 1d5c06282d125234db5a486816a0c9fd, type: 3}
   - {fileID: 3239860872811568735, guid: 5bc8c4474c7a7684b91423f8c4b532bf, type: 3}
