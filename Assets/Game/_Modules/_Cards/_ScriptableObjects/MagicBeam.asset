@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca515a3ffbbfd64cbf43149bfd89790, type: 3}
+  m_Name: MagicBeam
+  m_EditorClassIdentifier: 
+  cardName: Magic Beam
+  cardDescription: You gather your magic power and release a huge magical beam onto
+    the settlement!
+  cardType: 3
+  positiveOutcomeProbability: 0.4
+  positiveOutcomeDescription: You hit a cluster of citizens!
+  negativeOutcomeDescription: You are not feeling well today. The beam is too weak
+    to reach the settlement..
+  cardEffects: 
+  MaxCitizenCasualty: 4
