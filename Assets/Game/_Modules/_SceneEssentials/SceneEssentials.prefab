@@ -41,13 +41,39 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2979845922564055274}
     m_Modifications:
+    - target: {fileID: 3597773474724158266, guid: 1420052e70cc594438c984929052eb25, type: 3}
+      propertyPath: m_text
+      value: '1 - Click on a card to discard it.
+
+        2 - Click on a card to
+        play it.
+
+        Dont let your deck have less cards then you can fit in
+        your hand!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597773474724158266, guid: 1420052e70cc594438c984929052eb25, type: 3}
+      propertyPath: m_fontSize
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678614527456906354, guid: 1420052e70cc594438c984929052eb25, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1235.473
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678614527456906354, guid: 1420052e70cc594438c984929052eb25, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 123.925
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678614527456906354, guid: 1420052e70cc594438c984929052eb25, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -107.263
+      objectReference: {fileID: 0}
     - target: {fileID: 3678614527456906354, guid: 1420052e70cc594438c984929052eb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 162.28212
+      value: 224.03802
       objectReference: {fileID: 0}
     - target: {fileID: 4410576533154050712, guid: 1420052e70cc594438c984929052eb25, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 252
+      value: 321
       objectReference: {fileID: 0}
     - target: {fileID: 4757490324300390848, guid: 1420052e70cc594438c984929052eb25, type: 3}
       propertyPath: m_Name
